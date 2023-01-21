@@ -1,10 +1,5 @@
 .header {
-  padding: 16px 0 14px;
   background-color: transparent;
-
-  @media (min-width: $desktop-width) {
-    padding: 12px 0;
-  }
 }
 
 .header__wrapper {
@@ -12,8 +7,11 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  padding: 16px 0 14px;
+  background-color: transparent;
 
   @media (min-width: $desktop-width) {
+    padding: 12px 0;
     position: static;
     align-items: center;
   }
@@ -37,10 +35,11 @@
 .header__burger-toggle {
   background-color: transparent;
   border: none;
-  width: 22px;
+  width: 25px;
   height: 22px;
-  cursor: pointer;
+  padding: 0;
   position: relative;
+  cursor: pointer;
 
   @media (min-width: $desktop-width) {
     display: none;
@@ -64,35 +63,67 @@
   }
 
   &--third {
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 0;
   }
 
   &--fourth {
-    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
+.header__burger-toggle--menu-opened .header__burger-line:nth-of-type(2n+1) {
+  opacity: 0;
+}
+
+.header__burger-toggle--menu-opened .header__burger-line:nth-of-type(2) {
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.header__burger-toggle--menu-opened .header__burger-line:nth-of-type(4) {
+  transform: translateY(-50%) rotate(-45deg);
+  transition: transform 0.2s ease;
+}
+
+.header__burger-toggle:hover .header__burger-line {
+  background-color: #546889;
+}
+
+.header__burger-toggle:active .header__burger-line {
+  background-color: #8593ab;
+}
+
 .header__drop-down-wrapper {
+  background-color: $white;
   position: absolute;
-  top: 0;
+  bottom: 0;
+  transform: translateY(100%);
   left: 0;
-  padding: 82px 0 40px;
+  padding: 33px 0 40px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
 
   @media (min-width: $tablet-width) {
-    padding: 180px 0 172px;
+    padding: 131px 0 172px;
   }
 
   @media (min-width: $desktop-width) {
+    transform: translateY(0);
     position: static;
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
+  }
+}
+
+.header__drop-down-wrapper--menu-closed {
+  @media (max-width: $tablet-max-width) {
+    display: none;
   }
 }
 
@@ -124,7 +155,7 @@
 
 .header__nav-item:not(:last-child) {
   @media (min-width: $desktop-width) {
-    margin-right: 39px;
+    margin-right: 38px;
   }
 }
 
