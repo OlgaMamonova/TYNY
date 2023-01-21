@@ -1,0 +1,49 @@
+.social {
+  @include list-style;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social__item:not(:last-child) {
+  margin-right: 13px;
+
+  @media (min-width: $tablet-width) and (max-width: $tablet-max-width) {
+    margin-right: 19px;
+  }
+}
+
+.social__link:hover .social__icon {
+  opacity: 0.7;
+}
+
+.social__link:active .social__icon {
+  opacity: 0.5;
+}
+
+.social__icon {
+  display: block;
+}
+
+.social__icon--mail {
+  @media (min-width: $tablet-width) {
+    width: 39px;
+    height: 27px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 27px;
+    height: 19px;
+  }
+}
+
+.social__icon--facebook {
+  @media (min-width: $tablet-width) {
+    width: 37px;
+    height: 37px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 26px;
+    height: 26px;
+  }
+}
