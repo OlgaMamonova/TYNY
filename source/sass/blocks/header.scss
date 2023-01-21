@@ -1,12 +1,20 @@
 .header {
   padding: 16px 0 14px;
   background-color: transparent;
+
+  @media (min-width: $desktop-width) {
+    padding: 12px 0;
+  }
 }
 
 .header__wrapper {
   display: flex;
   justify-content: space-between;
   position: relative;
+
+  @media (min-width: $desktop-width) {
+    position: static;
+  }
 }
 
 .header__logo-capture {
@@ -38,6 +46,13 @@
   @media (min-width: $tablet-width) {
     padding: 180px 0 172px;
   }
+
+  @media (min-width: $desktop-width) {
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+  }
 }
 
 .header__nav {
@@ -46,6 +61,10 @@
   @media (min-width: $tablet-width) {
     margin-bottom: 46px;
   }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
 }
 
 .header__nav-list {
@@ -53,6 +72,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .header__nav-link {
@@ -68,6 +92,11 @@
     font-size: 32px;
     line-height: 38px;
     padding: 20px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+    line-height: 19px;
   }
 
   &:hover {
@@ -91,6 +120,10 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 92px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
   }
 
   &:hover {
