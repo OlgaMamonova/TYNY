@@ -1,17 +1,23 @@
 .header {
   background-color: transparent;
+  padding: 16px 0 14px;
+  position: relative;
+
+  @media (min-width: $desktop-width) {
+    padding: 12px 0;
+    position: static;
+    align-items: center;
+  }
 }
 
 .header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  padding: 16px 0 14px;
+  // position: relative;
   background-color: transparent;
 
   @media (min-width: $desktop-width) {
-    padding: 12px 0;
     position: static;
     align-items: center;
   }
