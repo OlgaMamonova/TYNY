@@ -14,6 +14,7 @@
 
   @media (min-width: $desktop-width) {
     position: static;
+    align-items: center;
   }
 }
 
@@ -22,14 +23,23 @@
   line-height: 35px;
   margin: 0;
 
-    &--light {
-      font-weight: 300;
-    }
+  &--light {
+    font-weight: 300;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 170px;
+    margin-right: 24px;
+  }
 }
 
-.header__burger-button {
+.header__burger-toggle {
   background-color: transparent;
   border: 1px solid $dark-blue;
+
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
 }
 
 .header__drop-down-wrapper {
@@ -64,6 +74,7 @@
 
   @media (min-width: $desktop-width) {
     margin-bottom: 0;
+    margin-right: 46px;
   }
 }
 
@@ -74,8 +85,15 @@
   align-items: center;
 
   @media (min-width: $desktop-width) {
+    max-width: 540px;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+
+.header__nav-item:not(:last-child) {
+  @media (min-width: $desktop-width) {
+    margin-right: 40px;
   }
 }
 
@@ -97,6 +115,7 @@
   @media (min-width: $desktop-width) {
     font-size: 16px;
     line-height: 19px;
+    padding: 6px 0;
   }
 
   &:hover {
@@ -123,7 +142,9 @@
   }
 
   @media (min-width: $desktop-width) {
+    max-width: 161px;
     margin-bottom: 0;
+    margin-right: 129px;
   }
 
   &:hover {
