@@ -1,0 +1,92 @@
+.invite {
+  padding: 60px 0 130px;
+  background-color: $dark-blue;
+
+  @media (min-width: $tablet-width) {
+    padding: 51px 0 170px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 69px 0 162px;
+  }
+}
+
+.invite__wrapper {
+  background-image: url("../img/background/message.svg");
+  background-repeat: no-repeat;
+  background-size: 237px 215px;
+  background-position: center 346px;
+
+  @media (min-width: $tablet-width) {
+    background-size: 274px 249px;
+    background-position: right 14px;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-size: 397px 361px;
+    background-position: right top;
+  }
+}
+
+.invite__img {
+  display: block;
+  margin-bottom: 59px;
+
+  @media (min-width: $tablet-width) {
+    width: 394px;
+    height: 220px;
+    margin-bottom: 73px;
+    margin-left: -47px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 535px;
+    height: 300px;
+    margin-bottom: 65px;
+    margin-left: -57px;
+  }
+}
+
+.invite__button {
+  padding: 26px 0 25px;
+  border: none;
+  outline: none;
+  background-color: $blue;
+  color: $white;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
+  width: 100%;
+  margin-bottom: 322px;
+
+  @media (min-width: $tablet-width) {
+    padding: 26px 40px 25px;
+    letter-spacing: 10px;
+    width: fit-content;
+    margin-bottom: 48px;
+  }
+}
+
+.invite__text {
+  margin: 0;
+  color: $white;
+
+  @media (min-width: $tablet-width) {
+    width: 518px;
+
+  }
+
+  &--medium {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 500;
+    margin-bottom: 41px;
+    width: 261px;
+
+    @media (min-width: $tablet-width) {
+      width: 518px;
+    }
+  }
+}
