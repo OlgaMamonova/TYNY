@@ -88,15 +88,16 @@
         <div class="container">
           <div class="content-container invite__wrapper">
             <img class="invite__img " src="img/invite.svg" alt="информация о конференции" width="280px" height="157px">
-          <button class="invite__button" type="button">Зарегистрироваться</button>
-          <p class="invite__text invite__text--medium">Команда рекламного холдинга GroupM рада
+            <button class="invite__button button" type="button">Зарегистрироваться</button>
+            <p class="invite__text invite__text--medium">Команда рекламного холдинга GroupM рада
             открыть&nbsp; для вас двери digital-конференции NextM!
-          </p>
-          <p class="invite__text">NextM – это ежегодная digital-&nbsp;конференция,
+            </p>
+            <p class="invite__text">NextM – это ежегодная digital-&nbsp;конференция,
             организованная ведущей международной рекламной группой GroupM, входящей в состав коммуникационного холдинга WPP и представленной&nbsp; в России агентствами Mindshare, MediaCom и Wavemaker.
-          </p>
-          <div class="invite__arrow-wrapper"><span class="invite__arrow"></span></div>
-
+            </p>
+            <div class="invite__arrow-wrapper">
+              <span class="invite__arrow"></span>
+            </div>
           </div>
         </div>
       </section>
@@ -120,10 +121,53 @@
 сбилетом будет отправлено вам на Email, указанный при регистрации
         </p>
         <form class="modal__form" action="" method="post">
-
+          <p class="modal__input-wrapper">
+            <label class="visually-hidden" for="first-name">
+              имя
+            </label>
+            <input class="modal__input" name="first-name" id="first-name" type="text" placeholder="Имя / First Name*" required>
+          </p>
+          <p class="modal__input-wrapper">
+            <label class="visually-hidden" for="last-name">
+              фамилия
+            </label>
+            <input class="modal__input" name="last-name" id="last-name" type="text" placeholder="Фамилия / Last Name*" required>
+          </p>
+          <p class="modal__input-wrapper">
+            <label class="visually-hidden" for="company">
+              компания
+            </label>
+            <input class="modal__input" name="company" id="company" type="text" placeholder="Компания / Company*" required>
+          </p>
+          <p class="modal__input-wrapper">
+            <label class="visually-hidden" for="job-title">
+              имя
+            </label>
+            <input class="modal__input" name="job-title" id="job-title" type="text" placeholder="Должность / Job Title*" required>
+          </p>
+          <p class="modal__input-wrapper">
+            <label class="visually-hidden" for="email">
+              email
+            </label>
+            <input class="modal__input" name="email" id="email" type="email" placeholder="Email*" required>
+          </p>
+          <p class="modal__input-wrapper">
+            <label class="modal__checkbox-label" for="email">
+              <input class="modal__checkbox" name="agreement" type="checkbox" checked>
+              Я согласен
+              <a class="modal__use-terms" href="#">
+                с условиями использования
+              </a>
+            </label>
+          </p>
+          <div class="modal__button-wrapper">
+            <div class="modal__captcha"></div>
+            <button class="modal__button button" type="submit">
+              регистрация
+            </button>
+          </div>
         </form>
       </div>
-
     </div>
     <script src="js/main.js" type="module"></script>
   </body>
