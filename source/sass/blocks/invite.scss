@@ -3,11 +3,11 @@
   background-color: $dark-blue;
 
   @media (min-width: $tablet-width) {
-    padding: 51px 0 170px;
+    padding: 51px 0 69px;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 69px 0 162px;
+    padding: 69px 0 86px;
   }
 }
 
@@ -76,7 +76,12 @@
 
   @media (min-width: $tablet-width) {
     width: 518px;
+    margin-bottom: 73px;
+  }
 
+  @media (min-width: $desktop-width) {
+    width: 518px;
+    margin-bottom: 48px;
   }
 
   &--medium {
@@ -91,3 +96,49 @@
     }
   }
 }
+
+.invite__arrow {
+  @media (min-width: $tablet-width) {
+    background-color: transparent;
+    width: 85px;
+    height: 28px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 2px;
+    background-color: $white;
+    bottom: 0;
+    left: 42px;
+    transform: rotate(-32deg);
+    transform-origin: left;
+    transition: bottom 0.2s linear;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 49px;
+    height: 2px;
+    background-color: $white;
+    bottom: 0;
+    right: 42px;
+    transform: rotate(32deg);
+    transform-origin: right;
+    transition: bottom 0.2s linear;
+  }
+}
+
+.invite__arrow-wrapper:hover .invite__arrow::after{
+  bottom: -10px;
+}
+
+.invite__arrow-wrapper:hover .invite__arrow::before{
+  bottom: -10px;
+}
+
