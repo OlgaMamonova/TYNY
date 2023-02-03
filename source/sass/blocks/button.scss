@@ -17,4 +17,12 @@
     letter-spacing: 10px;
     width: fit-content;
   }
+
+  &:hover {
+    background-color: #4da4fe;
+  }
+
+  &:active {
+    background-color: #80beff;
+  }
 }
