@@ -1,13 +1,33 @@
 .modal {
-  padding: 40px 20px;
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding-top: 302px;
+    padding-bottom: 338px;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(45, 52, 64, 0.3);
+    z-index: 3;
+  }
+}
+
+.modal__container {
   background-color: $white;
+  width: 320px;
+  padding: 40px 20px;
+  margin: 0 auto;
 
   @media (min-width: $tablet-width) {
-    padding: 53px 40px 107px;
+    width: 768px;
+    padding: 53px 40px 107px;;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 41px 87px 82px;
+    margin: auto;
+    width: 974px;
+    padding: 41px 87px 82px;;
   }
 }
 
@@ -104,8 +124,24 @@
   opacity: 1;
 }
 
+.modal__button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 .modal__captcha {
   background-color: lightgrey;
   width: 280px;
   height: 76px;
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
 }
