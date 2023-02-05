@@ -56,6 +56,54 @@
   line-height: 25.2px;
 }
 
+.modal__use-terms {
+  color: $blue;
+}
+
+.modal__checkbox-wrapper {
+  position: relative;
+}
+
+.modal__checkbox {
+  appearance: none;
+  position: absolute;
+}
+
+.modal__checkbox-label {
+  padding-left: 40px;
+  cursor: pointer;
+}
+
+.modal__checkbox-label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $dark-blue;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.modal__checkbox-label::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/checkbox.svg") no-repeat;
+  background-size: 12px 10px;
+  background-position: center;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.modal__checkbox:checked + .modal__checkbox-label::after {
+  opacity: 1;
+}
+
 .modal__captcha {
   background-color: lightgrey;
   width: 280px;
