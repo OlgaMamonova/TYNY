@@ -1,15 +1,19 @@
 .modal {
   @media (min-width: $desktop-width) {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
-    display: block;
     padding-top: 302px;
     padding-bottom: 338px;
     width: 100%;
     min-height: 100%;
     background-color: rgba(45, 52, 64, 0.3);
     z-index: 3;
+  }
+
+  &--closed {
+    display: none;
   }
 }
 
