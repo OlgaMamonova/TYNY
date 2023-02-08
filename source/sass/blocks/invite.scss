@@ -82,13 +82,20 @@
   }
 }
 
+.invite__arrow-wrapper {
+  @media (min-width: $tablet-width) {
+    width: fit-content;
+    text-align: center;
+  }
+}
+
 .invite__arrow {
   @media (min-width: $tablet-width) {
     background-color: transparent;
+    margin: 0 auto;
     width: 85px;
     height: 28px;
     display: block;
-    margin: 0 auto;
     position: relative;
 
     &::before {

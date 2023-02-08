@@ -1,3 +1,5 @@
+// import { burgerToggle, toggleMenu } from "./burger-menu.js";
+
 const initModal = () => {
   const signUpButtons = document.querySelectorAll('.signUp-button-js');
   const body = document.querySelector('.page__body');
@@ -17,8 +19,8 @@ const initModal = () => {
   }
 
   const closeModal = () => {
-    body.classList.remove('page__body--modal-opened');
     modal.classList.remove('modal--opened');
+    body.classList.remove('page__body--modal-opened');
     document.removeEventListener('keydown', onModalEscKeydown);
     modalBody.removeEventListener('click', onModalBodyClick);
   }
