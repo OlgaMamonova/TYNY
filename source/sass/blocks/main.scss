@@ -2,7 +2,8 @@
   flex-grow: 1;
 
   &--modal-opened {
-    height: 100vh;
-    overflow: hidden;
+    @media (max-width: $tablet-max-width) {
+      display: none;
+    }
   }
 }

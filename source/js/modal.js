@@ -1,21 +1,26 @@
 const initModal = () => {
-  const signUpButton = document.querySelector('.invite__button');
-  const main = document.querySelector('.main');
+  const signUpButtons = document.querySelectorAll('.signUp-button-js');
+  const body = document.querySelector('.page__body');
   const modal = document.querySelector('.modal');
-  const modalContent = modal.querySelector('.modal__container');
+  const modalBody = modal.querySelector('.modal__body');
+  const modalContent = modal.querySelector('.modal__content');
+  // const main = document.querySelector('.main');
+  // const footer = document.querySelector('.footer');
 
   const isEscapeKey = (evt) => evt.key === 'Escape';
 
   const openModal = () => {
-    main.classList.add('main--modal-opened');
-    modal.classList.remove('modal--closed');
+    modal.classList.add('modal--opened');
+    body.classList.add('page__body--modal-opened');
     document.addEventListener('keydown', onModalEscKeydown);
+    modalBody.addEventListener('click', onModalBodyClick);
   }
 
   const closeModal = () => {
-    main.classList.remove('main--modal-opened');
-    modal.classList.add('modal--closed');
+    body.classList.remove('page__body--modal-opened');
+    modal.classList.remove('modal--opened');
     document.removeEventListener('keydown', onModalEscKeydown);
+    modalBody.removeEventListener('click', onModalBodyClick);
   }
 
   function onModalEscKeydown(evt) {
@@ -25,7 +30,19 @@ const initModal = () => {
     }
   }
 
-  signUpButton.addEventListener('click', openModal);
+  function onModalBodyClick (evt) {
+    const modalOverLay = evt.composedPath().includes(modalContent);
+    if (!modalOverLay) {
+      closeModal();
+    }
+  }
+
+  if (signUpButtons.length > 0) {
+    for (let i = 0; i < signUpButtons.length; i++) {
+      const signUpButton = signUpButtons[i];
+      signUpButton.addEventListener('click', openModal);
+    }
+  }
 }
 
 export { initModal };

@@ -6,6 +6,7 @@
       <title>THIS YEAR NEXT YEAR</title>
       <link rel="stylesheet" href="css/style.min.css">
   </head>
+  <!-- модификатор  modal-opened при открытом модальном окне на десктопе -->
   <body class="page__body" id="start">
     <header class="page__header header">
       <div class="header__wrapper container">
@@ -53,7 +54,7 @@
               </li>
             </ul>
           </nav>
-          <button class="header__button" type="button">
+          <button class="header__button signUp-button-js" type="button">
             Регистрация
           </button>
           <ul class="header__social social">
@@ -89,7 +90,7 @@
           <div class="content-container invite__wrapper">
             <h2 class="visually-hidden">Приглашение на digital-конференцию NextM</h2>
             <img class="invite__img " src="img/invite.svg" alt="информация о конференции" width="280px" height="157px">
-            <button class="invite__button button" type="button">Зарегистрироваться</button>
+            <button class="invite__button button signUp-button-js" type="button">Зарегистрироваться</button>
             <p class="invite__text invite__text--medium">Команда рекламного холдинга GroupM рада
             открыть&nbsp; для вас двери digital-конференции NextM!
             </p>
@@ -112,59 +113,62 @@
       <section class="main__question-form question-form" id="question-form"></section>
     </main>
     <footer class="footer"></footer>
-    <div class="modal modal--closed">
-      <div class="modal__container">
-        <h2 class="modal__title title">Регистрация</h2>
-        <p class="modal__text">
-          Обращаем ваше внимание на то, что мероприятие является закрытым.
-Преимущественное право посетить мероприятие имеют представители компаний-
-рекламодателей и партнеров GroupM. В случае положительного решения письмо
-сбилетом будет отправлено вам на Email, указанный при регистрации
-        </p>
-        <form class="modal__form" action="" method="post">
-          <p class="modal__input-wrapper">
-            <label class="visually-hidden" for="first-name">
-              имя
-            </label>
-            <input class="modal__input" name="first-name" id="first-name" type="text" placeholder="Имя / First Name*" required>
+    <!--  модификатор opened при открытом модальном окне -->
+    <div class="modal">
+      <div class="modal__body">
+        <div class="modal__content">
+          <h2 class="modal__title title">Регистрация</h2>
+          <p class="modal__text">
+            Обращаем ваше внимание на то, что мероприятие является закрытым.
+  Преимущественное право посетить мероприятие имеют представители компаний-
+  рекламодателей и партнеров GroupM. В случае положительного решения письмо
+  сбилетом будет отправлено вам на Email, указанный при регистрации
           </p>
-          <p class="modal__input-wrapper">
-            <label class="visually-hidden" for="last-name">
-              фамилия
-            </label>
-            <input class="modal__input" name="last-name" id="last-name" type="text" placeholder="Фамилия / Last Name*" required>
-          </p>
-          <p class="modal__input-wrapper">
-            <label class="visually-hidden" for="company">
-              компания
-            </label>
-            <input class="modal__input" name="company" id="company" type="text" placeholder="Компания / Company*" required>
-          </p>
-          <p class="modal__input-wrapper">
-            <label class="visually-hidden" for="job-title">
-              имя
-            </label>
-            <input class="modal__input" name="job-title" id="job-title" type="text" placeholder="Должность / Job Title*" required>
-          </p>
-          <p class="modal__input-wrapper">
-            <label class="visually-hidden" for="email">
-              email
-            </label>
-            <input class="modal__input" name="email" id="email" type="email" placeholder="Email*" required>
-          </p>
-          <p class="modal__checkbox-wrapper">
-            <input class="modal__checkbox" name="agreement" id="agreement" type="checkbox" checked>
-            <label class="modal__checkbox-label" for="agreement">Я согласен
-              <a class="modal__use-terms" href="#">
-                с условиями использования
-              </a>
-            </label>
-          </p>
-          <div class="modal__button-wrapper">
-            <div class="modal__captcha"></div>
-            <input class="modal__button button" type="submit" value="Регистрация"></input>
-          </div>
-        </form>
+          <form class="modal__form" action="" method="post">
+            <p class="modal__input-wrapper">
+              <label class="visually-hidden" for="first-name">
+                имя
+              </label>
+              <input class="modal__input" name="first-name" id="first-name" type="text" placeholder="Имя / First Name*" required>
+            </p>
+            <p class="modal__input-wrapper">
+              <label class="visually-hidden" for="last-name">
+                фамилия
+              </label>
+              <input class="modal__input" name="last-name" id="last-name" type="text" placeholder="Фамилия / Last Name*" required>
+            </p>
+            <p class="modal__input-wrapper">
+              <label class="visually-hidden" for="company">
+                компания
+              </label>
+              <input class="modal__input" name="company" id="company" type="text" placeholder="Компания / Company*" required>
+            </p>
+            <p class="modal__input-wrapper">
+              <label class="visually-hidden" for="job-title">
+                имя
+              </label>
+              <input class="modal__input" name="job-title" id="job-title" type="text" placeholder="Должность / Job Title*" required>
+            </p>
+            <p class="modal__input-wrapper">
+              <label class="visually-hidden" for="email">
+                email
+              </label>
+              <input class="modal__input" name="email" id="email" type="email" placeholder="Email*" required>
+            </p>
+            <p class="modal__checkbox-wrapper">
+              <input class="modal__checkbox" name="agreement" id="agreement" type="checkbox" checked>
+              <label class="modal__checkbox-label" for="agreement">Я согласен
+                <a class="modal__use-terms" href="#">
+                  с условиями использования
+                </a>
+              </label>
+            </p>
+            <div class="modal__button-wrapper">
+              <div class="modal__captcha"></div>
+              <input class="modal__button button" type="submit" value="Регистрация"></input>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <script src="js/main.js" type="module"></script>
