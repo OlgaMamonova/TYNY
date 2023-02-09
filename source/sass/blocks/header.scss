@@ -8,12 +8,15 @@
   }
 }
 
+.header__drop-down-wrapper {
+  position: relative;
+}
+
 .header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  position: relative;
 }
 
 .header__logo-capture {
@@ -96,11 +99,7 @@
   background-color: #546889;
 }
 
-.header__burger-toggle:active .header__burger-line {
-  background-color: #8593ab;
-}
-
-.header__drop-down-wrapper {
+.header__drop-down {
   background-color: $white;
   position: absolute;
   bottom: 0;
@@ -128,15 +127,10 @@
   }
 }
 
-// .header__drop-down-wrapper--menu-closed {
-//   @media (max-width: $tablet-max-width) {
-//     display: none;
-//   }
-// }
-
-.header__drop-down-wrapper--menu-opened {
+.header__drop-down--menu-opened {
   @media (max-width: $tablet-max-width) {
     display: flex;
+    overflow-y: auto;
   }
 }
 

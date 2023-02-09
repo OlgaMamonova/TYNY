@@ -1,4 +1,4 @@
-// import { burgerToggle, toggleMenu } from "./burger-menu.js";
+import { closeMenu } from "./burger-menu.js";
 
 const initModal = () => {
   const signUpButtons = document.querySelectorAll('.signUp-button-js');

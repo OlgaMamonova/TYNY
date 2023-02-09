@@ -1,7 +1,8 @@
 const burgerOpenButton = document.querySelector('.header__burger-toggle');
-const dropDownMenu = document.querySelector('.header__drop-down-wrapper');
-const body = document.querySelector('.page__body');
+const dropDownMenu = document.querySelector('.header__drop-down');
 const navList = document.querySelector('.header__nav-list');
+const main = document.querySelector('.main');
+const footer = document.querySelector('.footer');
 
 const onNavListClick = (evt) => {
   if (evt.target.nodeName === 'A') {
@@ -10,9 +11,10 @@ const onNavListClick = (evt) => {
 }
 
 const openMenu = () => {
-  dropDownMenu.classList.add('header__drop-down-wrapper--menu-opened');
+  main.classList.add('main--menu-opened');
+  footer.classList.add('footer--menu-opened');
+  dropDownMenu.classList.add('header__drop-down--menu-opened');
   burgerOpenButton.classList.add('header__burger-toggle--menu-opened');
-  body.classList.add('page__body--menu-opened');
 
   let burgerCloseButton = document.querySelector('.header__burger-toggle--menu-opened');
 
@@ -23,9 +25,10 @@ const openMenu = () => {
 function closeMenu () {
   let burgerCloseButton = document.querySelector('.header__burger-toggle--menu-opened');
 
-  dropDownMenu.classList.remove('header__drop-down-wrapper--menu-opened');
+  main.classList.remove('main--menu-opened');
+  footer.classList.remove('footer--menu-opened');
+  dropDownMenu.classList.remove('header__drop-down--menu-opened');
   burgerCloseButton.classList.remove('header__burger-toggle--menu-opened');
-  body.classList.remove('page__body--menu-opened');
   burgerCloseButton.removeEventListener('click', closeMenu);
   navList.removeEventListener('click', onNavListClick);
 }
@@ -34,4 +37,4 @@ const initMenu = () => {
     burgerOpenButton.addEventListener('click', openMenu);
 }
 
-export { initMenu };
+export { initMenu, closeMenu };

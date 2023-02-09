@@ -6,4 +6,10 @@
       display: none;
     }
   }
+
+  &--menu-opened {
+    @media (max-width: $tablet-max-width) {
+      display: none;
+    }
+  }
 }
