@@ -1,0 +1,28 @@
+.button {
+  padding: 26px 0 25px;
+  border: none;
+  outline: none;
+  background-color: $blue;
+  color: $white;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
+  width: 100%;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    padding: 26px 40px 25px;
+    letter-spacing: 10px;
+    width: fit-content;
+  }
+
+  &:hover {
+    background-color: #4da4fe;
+  }
+
+  &:active {
+    background-color: #80beff;
+  }
+}

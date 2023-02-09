@@ -1,0 +1,163 @@
+.modal {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 52, 64, 0.3);
+    overflow-y: auto;
+    z-index: 3;
+  }
+
+  &--opened {
+    display: block;
+  }
+}
+
+.modal__body {
+  @media (min-width: $desktop-width) {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 302px;
+    padding-bottom: 338px;
+  }
+}
+
+.modal__content {
+  background-color: $white;
+  width: 320px;
+  padding: 40px 20px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: 768px;
+    padding: 53px 40px 107px;;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: auto;
+    width: 974px;
+    padding: 41px 87px 82px;;
+  }
+}
+
+.modal__title {
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 30px;
+  }
+}
+
+.modal__text {
+  margin: 0;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 54px;
+  }
+}
+
+.modal__input-wrapper {
+  margin: 0;
+  margin-bottom: 26px;
+
+  &:nth-of-type(5){
+    margin-bottom: 28px;
+  }
+}
+
+.modal__checkbox-wrapper {
+  margin: 0;
+  margin-bottom: 29px;
+}
+
+.modal__input {
+  width: 100%;
+  padding: 12px 21px;
+}
+
+.modal__input::placeholder {
+  font-size: 18px;
+  line-height: 25.2px;
+}
+
+.modal__use-terms {
+  color: $blue;
+}
+
+.modal__checkbox-wrapper {
+  position: relative;
+}
+
+.modal__checkbox {
+  appearance: none;
+  position: absolute;
+}
+
+.modal__checkbox-label {
+  padding-left: 40px;
+  cursor: pointer;
+}
+
+.modal__checkbox-label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $dark-blue;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.modal__checkbox-label::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/checkbox.svg") no-repeat;
+  background-size: 12px 10px;
+  background-position: center;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.modal__checkbox:checked + .modal__checkbox-label::after {
+  opacity: 1;
+}
+
+.modal__button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.modal__captcha {
+  background-color: lightgrey;
+  width: 280px;
+  height: 76px;
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+}

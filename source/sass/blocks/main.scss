@@ -1,4 +1,15 @@
 .main {
   flex-grow: 1;
-  background-color: $dark-blue;
+
+  &--modal-opened {
+    @media (max-width: $tablet-max-width) {
+      display: none;
+    }
+  }
+
+  &--menu-opened {
+    @media (max-width: $tablet-max-width) {
+      display: none;
+    }
+  }
 }
