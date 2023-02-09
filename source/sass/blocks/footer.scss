@@ -1,16 +1,4 @@
 .footer {
   background-color: $dark-blue;
   height: 40px;
-
-  &--modal-opened {
-    @media (max-width: $tablet-max-width) {
-      display: none;
-    }
-  }
-
-  &--menu-opened {
-    @media (max-width: $tablet-max-width) {
-      display: none;
-    }
-  }
 }

@@ -1,15 +1,3 @@
 .main {
   flex-grow: 1;
-
-  &--modal-opened {
-    @media (max-width: $tablet-max-width) {
-      display: none;
-    }
-  }
-
-  &--menu-opened {
-    @media (max-width: $tablet-max-width) {
-      display: none;
-    }
-  }
 }

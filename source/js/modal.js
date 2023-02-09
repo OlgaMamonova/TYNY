@@ -1,4 +1,4 @@
-import { closeMenu } from "./burger-menu.js";
+import { dropDownMenu, closeMenu, burgerOpenButton, openMenu } from "./burger-menu.js";
 
 const initModal = () => {
   const signUpButtons = document.querySelectorAll('.signUp-button-js');
@@ -6,7 +6,6 @@ const initModal = () => {
   const modal = document.querySelector('.modal');
   const modalBody = modal.querySelector('.modal__body');
   const modalContent = modal.querySelector('.modal__content');
-  const DESCKTOPWIDTH = 1240;
 
   const isEscapeKey = (evt) => evt.key === 'Escape';
 
@@ -15,6 +14,14 @@ const initModal = () => {
     body.classList.add('page__body--modal-opened');
     document.addEventListener('keydown', onModalEscKeydown);
     modalBody.addEventListener('click', onModalBodyClick);
+
+    burgerOpenButton.removeEventListener('click', openMenu);
+    burgerOpenButton.addEventListener('click', closeModal);
+    burgerOpenButton.classList.add('header__burger-toggle--menu-opened');
+
+    if (dropDownMenu) {
+      closeMenu();
+    }
   }
 
   const closeModal = () => {
@@ -22,6 +29,10 @@ const initModal = () => {
     body.classList.remove('page__body--modal-opened');
     document.removeEventListener('keydown', onModalEscKeydown);
     modalBody.removeEventListener('click', onModalBodyClick);
+
+    burgerOpenButton.removeEventListener('click', closeModal);
+    burgerOpenButton.classList.remove('header__burger-toggle--menu-opened');
+    burgerOpenButton.addEventListener('click', openMenu);
   }
 
   function onModalEscKeydown(evt) {
