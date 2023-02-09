@@ -17,11 +17,11 @@ const initModal = () => {
 
     burgerOpenButton.removeEventListener('click', openMenu);
     burgerOpenButton.addEventListener('click', closeModal);
-    burgerOpenButton.classList.add('header__burger-toggle--menu-opened');
 
     if (dropDownMenu) {
       closeMenu();
     }
+    burgerOpenButton.classList.add('header__burger-toggle--menu-opened');
   }
 
   const closeModal = () => {
