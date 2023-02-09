@@ -6,8 +6,7 @@ const initModal = () => {
   const modal = document.querySelector('.modal');
   const modalBody = modal.querySelector('.modal__body');
   const modalContent = modal.querySelector('.modal__content');
-  // const main = document.querySelector('.main');
-  // const footer = document.querySelector('.footer');
+  const DESCKTOPWIDTH = 1240;
 
   const isEscapeKey = (evt) => evt.key === 'Escape';
 
