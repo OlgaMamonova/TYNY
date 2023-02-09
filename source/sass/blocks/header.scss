@@ -35,6 +35,10 @@
     opacity: 0.7;
   }
 
+  &:active {
+    opacity: 0.5;
+  }
+
   @media (min-width: $desktop-width) {
     min-width: 170px;
     margin-right: 24px;
@@ -98,6 +102,12 @@
 .header__burger-toggle:hover .header__burger-line {
   background-color: #546889;
 }
+
+.header__burger-toggle:active .header__burger-line {
+  background-color: #8593ab;
+}
+
+
 
 .header__drop-down {
   background-color: $white;

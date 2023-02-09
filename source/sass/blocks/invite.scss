@@ -82,17 +82,22 @@
   }
 }
 
-.invite__arrow-wrapper {
+.invite__arrow {
   @media (min-width: $tablet-width) {
-    width: fit-content;
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 }
 
-.invite__arrow {
+.invite__arrow-wrapper {
+  @media (min-width: $tablet-width) {
+    width: fit-content;
+  }
+}
+
+.invite__arrow-content {
   @media (min-width: $tablet-width) {
     background-color: transparent;
-    margin: 0 auto;
     width: 85px;
     height: 28px;
     display: block;
@@ -126,11 +131,11 @@
   }
 }
 
-.invite__arrow-wrapper:hover .invite__arrow::after{
+.invite__arrow-wrapper:hover .invite__arrow-content::after{
   bottom: -10px;
 }
 
-.invite__arrow-wrapper:hover .invite__arrow::before{
+.invite__arrow-wrapper:hover .invite__arrow-content::before{
   bottom: -10px;
 }
 
