@@ -42,6 +42,7 @@ const scripts = () => {
   return gulp.src('source/js/**/*.js')
   .pipe(terser())
   .pipe(gulp.dest('build/js'))
+  .pipe(browser.stream());
 }
 
 // Images
@@ -54,7 +55,6 @@ const optimizeImages = () => {
 
 const copyImages = () => {
   return gulp.src('source/img/**/*.{jpg,png}')
-  .pipe(squoosh())
   .pipe(gulp.dest('build/img'))
 }
 
@@ -71,13 +71,13 @@ const createWebp = () => {
 // Svg
 
 const  svg = () => {
-  return gulp.src(['source/img/**/*.svg', '!source/img/icon/sprite/*.svg'])
+  return gulp.src(['source/img/**/*.svg', '!source/img/icons/*.svg'])
   .pipe(svgo())
   .pipe(gulp.dest('build/img'))
 }
 
 const sprite = () => {
-  return gulp.src('source/img/icon/sprite/*.svg')
+  return gulp.src('source/img/icons/*.svg')
   .pipe(svgo())
   .pipe(svgstore({
     inlineSvg: true
@@ -129,8 +129,8 @@ const reload = (done) => {
 
 // Watcher
 const watcher = () => {
-  gulp.watch('source/sass/**/*.scss', gulp.series(styles, reload));
-  gulp.watch('source/js/**/*.js', gulp.series(scripts, reload));
+  gulp.watch('source/sass/**/*.scss', gulp.series(styles));
+  gulp.watch('source/js/**/*.js', gulp.series(scripts));
   gulp.watch('source/*.html', gulp.series(html, reload));;
 }
 
